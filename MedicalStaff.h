@@ -9,26 +9,29 @@
 
 using namespace std;
 
-class MedicalStaff {
+class MedicalStaff
+{
 protected:
-    short age;
-    string firstName;
-    string lastName;
-    string speciality;
-    Hospital hospital;
+	short age;
+	string firstName;
+	string lastname;
+	string specialization;
+	Hospital hospital;
 public:
-    MedicalStaff(string firstName, string lastName, short age, string speciality, Hospital hospital)
-    {
-        this->firstName = firstName;
-        this->lastName = lastName;
-
-        this->speciality = speciality;
-
-        if (age < 18) {
-            throw 18;
-        } else {
-            this->age = age;
-        }
-        this->hospital = hospital;
-    }
+	MedicalStaff() {}
+	MedicalStaff(string firstName, string lastname, short age, string specialization, Hospital hospital)
+	{
+		this->firstName = firstName;
+		this->lastname = lastname;
+		this->specialization = specialization;
+		if (age <= 18)
+		{
+			throw 18;
+		}
+		else
+		{
+			this->age = age;
+		};
+		this->hospital = hospital;
+	}
 };

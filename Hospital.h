@@ -1,6 +1,3 @@
-//
-// Created by AnSt on 18.10.2020.
-//
 #pragma once
 
 #include <string>
@@ -10,20 +7,20 @@ using namespace std;
 class Hospital {
 private:
     string name;
-    string address;
+    string adress;
 public:
     Hospital() {}
-    Hospital(string name, string address)
+    Hospital(string name, string adress)
     {
         this->name = name;
-        this->address = address;
+        this->adress = adress;
     }
     string GetName()
     {
         return name;
     }
-    string GetAddress()
+    string GetAdress()
     {
-        return address;
+        return adress;
     }
 };
