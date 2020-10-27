@@ -4,53 +4,72 @@
 #include <string>
 
 using namespace std;
-/*
-string ImportFromFile(string path) {
-    ifstream file;
 
-    file.open(path, ios::in);
+void ImportFromFile(string file_path) {
+	ifstream File;
+	string Temp;
+	int pos;
 
-    if (!file.is_open())
-    {
-        //TODO создание исключения
-    }
-    else
-    {
-        string temp;
-        int pos;
-        while (!file.eof())
-        {
-            file >> temp;
+	try
+	{
+		File.open(file_path, ios::in);
+		while (!File.eof())
+		{
+			File >> Temp;
 
-            //
-            //cout << temp;
+			pos = Temp.find(";");
+			string hospitalName = Temp.substr(0, pos);
 
-            pos = temp.find(";");
-            string lastName = temp.substr(0, pos);
+			string Temp2 = Temp.substr(pos + 1);
+			pos = Temp2.find(";");
+			string hospitalAddress = Temp2.substr(0, pos);
 
-            string temp2 = temp.substr(pos + 1);
-            pos = temp2.find(";");
-            string firstName = temp2.substr(0, pos);
+			string Temp3 = Temp2.substr(pos + 1);
+			pos = Temp3.find(";");
+			string firstName = Temp3.substr(0, pos);
 
-            string temp3 = temp2.substr(pos + 1);
-            pos = temp3.find(";");
-            string dateBirth = temp3.substr(0, pos);
+			string Temp4 = Temp3.substr(pos + 1);
+			pos = Temp4.find(";");
+			string lastname = Temp4.substr(0, pos);
 
-            string temp4 = temp3.substr(pos + 1);
-            pos = temp4.find(";");
-            string age = temp4.substr(0, pos);
+			string Temp5 = Temp4.substr(pos + 1);
+			pos = Temp5.find(";");
+			string age = Temp5.substr(0, pos);
 
-            string temp5 = temp4.substr(pos + 1);
-            pos = temp5.find(";");
-            string faculty = temp5.substr(0, pos);
+			string Temp6 = Temp5.substr(pos + 1);
+			pos = Temp6.find(";");
+			string departament_speciality = Temp6.substr(0, pos);
 
-            //cout << lastName << " " << firstName << " " << dateBirth << " " << age << endl;
+			string Temp7 = Temp6.substr(pos + 1);
+			pos = Temp7.find(";");
+			string departament_name = Temp7.substr(0, pos);
 
-        }
-        file.close();
-    }
+			string Temp8 = Temp7.substr(pos + 1);
+			pos = Temp8.find(";");
+			string specialization = Temp8.substr(0, pos);
+
+			cout << hospitalName << ", " << hospitalAddress << " " << firstName << " " << lastname << endl;
+	
+		}
+
+		File.close();
+	}
+	catch (const std::exception&ex)
+	{
+		cout << ex.what() << endl;
+		cout << "Файл не открыт" << endl;
+	}
 
 
 
 
-}*/
+
+
+
+
+
+
+
+
+
+}

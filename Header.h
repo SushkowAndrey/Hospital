@@ -6,7 +6,7 @@ using namespace std;
 
 int Checking_the_symbol(string M)
 {
-    if (M.size() != 1) return 10;
+    if (M.size() != 1) return 10; //значения 10 в меню нет, поэтому для отработки цикла switch/case возвращаем для примера число 10
     else {
         int Num;
         for (int i = 0; i < M.size(); i++)

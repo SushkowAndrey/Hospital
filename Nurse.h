@@ -18,12 +18,44 @@ public:
 	}
 	void Print()
 	{
-		cout << "Íàèìåíîâàíèå áîëüíèöû " << hospital.GetName() << ", àäðåñ " << hospital.GetAdress() << endl;
-		cout << "Ôàìèëèÿ - " << firstName << endl;
-		cout << "Èìÿ - " << lastname << endl;
-		cout << "Âîçðàñò - " << age << endl;
-		cout << "Ñïåöèàëüíîñòü - " << departament.speciality << endl;
-		cout << "Íàèìåíîâàíèå îòäåëåíèÿ - " << departament.name << endl;
-		cout << "Ñïåöèàëüíîñòü â îòäåëåíèè - " << specialization << endl;
+		cout << "ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð±Ð¾Ð»ÑŒÐ½Ð¸Ñ†Ñ‹ " << hospital.GetName() << ", Ð°Ð´Ñ€ÐµÑ " << hospital.GetAdress() << endl;
+		cout << "Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ - " << firstName << endl;
+		cout << "Ð˜Ð¼Ñ - " << lastname << endl;
+		cout << "Ð’Ð¾Ð·Ñ€Ð°ÑÑ‚ - " << age << endl;
+		cout << "Ð¡Ð¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ - " << departament.speciality << endl;
+		cout << "ÐÐ°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¾Ñ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ñ - " << departament.name << endl;
+		cout << "Ð¡Ð¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð² Ð¾Ñ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ð¸ - " << specialization << endl;
+	}
+	string GethospitalName()
+	{
+		return hospital.GetName();
+	}
+	string GethospitalAdress()
+	{
+		return hospital.GetAdress();
+	}
+	string GetfirstName()
+	{
+		return firstName;
+	}
+	string Getlastname()
+	{
+		return lastname;
+	}
+	int Getage()
+	{
+		return age;
+	}
+	string Getdepartament_speciality()
+	{
+		return departament.speciality;
+	}
+	string Getdepartament_name()
+	{
+		return departament.name;
+	}
+	string Getspecialization()
+	{
+		return specialization;
 	}
 };

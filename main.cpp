@@ -1,109 +1,97 @@
-// больница
+п»ї// Р±РѕР»СЊРЅРёС†Р°
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "Doctor.h"
 #include "Nurse.h"
 #include "Interface.h"
 #include "Header.h"
 #include "Input.h"
 #include "Export.h"
+#include "Import.h"
 
 using namespace std;
 
-Doctor ConsoleInputDoctor();
-Nurse ConsoleInputNurse();
 
 int main()
 {
     system("chcp 1251 > nul");
     setlocale(LC_ALL, "ru");
-
     Interface interface;
-
-    int Number_of_doctors;
-    int Number_of_nurses;
-    interface.PrintWelcome();
-    interface.InputMedicalStuffDoctor();
-    cin >> Number_of_doctors;
-    Doctor* doctor = new Doctor[Number_of_doctors];
-    interface.InputMedicalStuffNurse();
-    cin >> Number_of_nurses;
-    Nurse* nurse = new Nurse[Number_of_nurses];
-    system("cls");
-
+    
+    vector <Doctor> doctor;
+    vector <Nurse> nurse;
+    
     string symbol;
     int Num;
+
     do {
         interface.PrintMenu();
-        cout << "Введите пункт меню - ";
+        cout << "Р’РІРµРґРёС‚Рµ РїСѓРЅРєС‚ РјРµРЅСЋ - ";
         cin >> symbol;
         Num = Checking_the_symbol(symbol);
         system("cls");
         switch (Num)
         {
         case 1:
-            cout << "Врачебный медперсонал " << endl;
+            cout << "Р’СЂР°С‡РµР±РЅС‹Р№ РјРµРґРїРµСЂСЃРѕРЅР°Р» " << endl;
             cout << "============================" << endl;
-            for (int i = 0; i < Number_of_doctors; i++)
+            for (auto element : doctor)
             {
-                cout << "Врач " << 1 + i << endl;
-                doctor[i].Print();
-                cout << "============================" << endl;
+                element.Print();
             }
-            cout << "Средний медперсонал " << endl;
+            cout << "РЎСЂРµРґРЅРёР№ РјРµРґРїРµСЂСЃРѕРЅР°Р» " << endl;
             cout << "============================" << endl;
-            for (int i = 0; i < Number_of_doctors; i++)
+            for (auto element : nurse)
             {
-                cout << "Медицинская сестра " << 1 + i << endl;
-                nurse[i].Print();
-                cout << "============================" << endl;
+                element.Print();
             }
             break;
         case 2:
-            for (int i = 0; i < Number_of_doctors; i++)
+            for (auto element : doctor)
             {
-                cout << "Врач " << 1 + i << endl;
-                doctor[i].Print();
+                element.Print();
             }
             break;
         case 3:
-            for (int i = 0; i < Number_of_doctors; i++)
+            for (auto element : nurse)
             {
-                cout << "Медицинская сестра " << 1 + i << endl;
-                nurse[i].Print();
+                element.Print();
             }
             break;
         case 4:
-            for (int i = 0; i < Number_of_doctors; i++)
+            char Sym;
+            do
             {
-                cout << "Врач " << 1 + i << endl;
-                doctor[i] = ConsoleInputDoctor();
-                system("cls");
-            }
+                doctor.push_back(ConsoleInputDoctor());
+                cout << "Р’РЅРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ РґСЂСѓРіРѕРј РІСЂР°С‡Рµ? (Y/N)" << endl;
+                cin >> Sym;
+            } while (Sym != 'N');
             break;
         case 5:
-            for (int i = 0; i < Number_of_doctors; i++)
+            char Sym_1;
+            do
             {
-                cout << "Медицинская сестра " << 1 + i << endl;
-                nurse[i] = ConsoleInputNurse();
-                system("cls");
-            }
+                nurse.push_back(ConsoleInputNurse());
+                cout << "Р’РЅРµСЃС‚Рё РґР°РЅРЅС‹Рµ Рѕ РґСЂСѓРіРѕР№ РјРµРґСЃРµСЃС‚СЂРµ? (Y/N)" << endl;
+                cin >> Sym_1;
+            } while (Sym_1 != 'N');
             break;
         case 6:
-            Export(doctor, Number_of_doctors);
+            ExportDoctor(doctor, doctor.size());
+            //ExportNurse(nurse, nurse.size());
             break;
         case 7:
+            ImportFromFile("Doctor.csv");
             break;
         case 8:
             interface.PrintExit();
             break;
         default:
-            interface.PrintError("Некорректный выбор меню");
+            interface.PrintError("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІС‹Р±РѕСЂ РјРµРЅСЋ");
             break;
         }
     } while (Num != 0);
 
-    delete[] doctor;
-    delete[] nurse;
 }
