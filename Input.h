@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <iostream>
 #include <string>
 #include "Doctor.h"
@@ -12,16 +12,15 @@ Doctor ConsoleInputDoctor()
     string name, speciality;
     string nameOfHospital, adress;
     int age;
-    cout << "Ââåäèòå ôàìèëèþ - "; cin >> firstName;
-    cout << "Ââåäèòå èìÿ - "; cin >> lastName;
-    cout << "Ââåäèòå âîçðàñò - "; cin >> age;
-    cout << "Ââåäèòå ñïåöèàëüíîñòü - "; cin >> specialization;
 
-    cout << "Ââåäèòå íàèìåíîâàíèå îòäåëåíèÿ - "; cin >> name;
-    cout << "Ââåäèòå ñïåöèàëüíîñòü îòäåëåíèÿ - "; cin >> speciality;
-
-    cout << "Ââåäèòå íàçâàíèå áîëüíèöû - "; cin >> nameOfHospital;
-    cout << "Ââåäèòå àäðåñ áîëüíèöû - "; cin >> adress;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ - "; cin >> firstName;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ - "; cin >> lastName;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ - "; cin >> age;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ - "; cin >> specialization;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¾Ñ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ñ - "; cin >> name;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð¾Ñ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ñ - "; cin >> speciality;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð±Ð¾Ð»ÑŒÐ½Ð¸Ñ†Ñ‹ - "; cin >> nameOfHospital;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð°Ð´Ñ€ÐµÑ Ð±Ð¾Ð»ÑŒÐ½Ð¸Ñ†Ñ‹ - "; cin >> adress;
 
     Hospital hospital(nameOfHospital, adress);
     Department departament(name, speciality);
@@ -35,24 +34,15 @@ Nurse ConsoleInputNurse()
     string name, speciality;
     string nameOfHospital, adress;
     int age;
-    cout << "Ââåäèòå ôàìèëèþ - "; cin >> firstName;
-    cout << "Ââåäèòå èìÿ - "; cin >> lastName;
-    try
-    {
-        cout << "Ââåäèòå âîçðàñò - "; cin >> age;
-    }
-    catch (...)
-    {
-        cout << "Îøèáêà" << endl;
-    }
 
-    cout << "Ââåäèòå ñïåöèàëüíîñòü - "; cin >> specialization;
-
-    cout << "Ââåäèòå íàèìåíîâàíèå îòäåëåíèÿ - "; cin >> name;
-    cout << "Ââåäèòå ñïåöèàëüíîñòü îòäåëåíèÿ - "; cin >> speciality;
-
-    cout << "Ââåäèòå íàçâàíèå áîëüíèöû - "; cin >> nameOfHospital;
-    cout << "Ââåäèòå àäðåñ áîëüíèöû - "; cin >> adress;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ„Ð°Ð¼Ð¸Ð»Ð¸ÑŽ - "; cin >> firstName;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ - "; cin >> lastName;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚ - "; cin >> age;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ - "; cin >> specialization;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ Ð¾Ñ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ñ - "; cin >> name;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¿ÐµÑ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð¾Ñ‚Ð´ÐµÐ»ÐµÐ½Ð¸Ñ - "; cin >> speciality;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð±Ð¾Ð»ÑŒÐ½Ð¸Ñ†Ñ‹ - "; cin >> nameOfHospital;
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð°Ð´Ñ€ÐµÑ Ð±Ð¾Ð»ÑŒÐ½Ð¸Ñ†Ñ‹ - "; cin >> adress;
 
     Hospital hospital(nameOfHospital, adress);
     Department departament(name, speciality);

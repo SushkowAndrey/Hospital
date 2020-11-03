@@ -12,7 +12,7 @@ public:
 	Department departament;
 	Nurse() {}
 	Nurse(string firstName, string lastname, short age, string specialization, Department departament, Hospital hospital) :
-		MedicalStaff(firstName, lastname, age, specialization, hospital)
+		MedicalStaff(firstName, lastName, age, specialization, hospital)
 	{
 		this->departament = departament;
 	}
@@ -20,41 +20,41 @@ public:
 	{
 		cout << "Наименование больницы " << hospital.GetName() << ", адрес " << hospital.GetAdress() << endl;
 		cout << "Фамилия - " << firstName << endl;
-		cout << "Имя - " << lastname << endl;
+		cout << "Имя - " << lastName << endl;
 		cout << "Возраст - " << age << endl;
 		cout << "Специальность - " << departament.speciality << endl;
 		cout << "Наименование отделения - " << departament.name << endl;
 		cout << "Специальность в отделении - " << specialization << endl;
 	}
-	string GethospitalName()
+	string GetHospitalName()
 	{
 		return hospital.GetName();
 	}
-	string GethospitalAdress()
+	string GetHospitalAdress()
 	{
 		return hospital.GetAdress();
 	}
-	string GetfirstName()
+	string GetFirstName()
 	{
 		return firstName;
 	}
-	string Getlastname()
+	string GetLastName()
 	{
-		return lastname;
+		return lastName;
 	}
-	int Getage()
+	int GetAge()
 	{
 		return age;
 	}
-	string Getdepartament_speciality()
+	string GetDepartamentSpeciality()
 	{
 		return departament.speciality;
 	}
-	string Getdepartament_name()
+	string GetDepartamentName()
 	{
 		return departament.name;
 	}
-	string Getspecialization()
+	string GetSpecialization()
 	{
 		return specialization;
 	}

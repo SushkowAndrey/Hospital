@@ -14,15 +14,15 @@ class MedicalStaff
 protected:
 	short age;
 	string firstName;
-	string lastname;
+	string lastName;
 	string specialization;
 	Hospital hospital;
 public:
 	MedicalStaff() {}
-	MedicalStaff(string firstName, string lastname, short age, string specialization, Hospital hospital)
+	MedicalStaff(string firstName, string lastName, short age, string specialization, Hospital hospital)
 	{
 		this->firstName = firstName;
-		this->lastname = lastname;
+		this->lastName = lastName;
 		this->specialization = specialization;
 		if (age <= 18)
 		{
